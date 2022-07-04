@@ -7,29 +7,36 @@ const canvas = document.querySelector('canvas');
 const contexto = canvas.getContext('2d');
 
 
+    const flappyBird = {
+        spriteX : 0,
+        spriteY : 0,
+        largura : 34,
+        altura : 24,
+        x : 34,
+        y : 24,
+        gravidade : 0.25,
+        velocidade : 0,
+        atualiza(){
+            flappyBird.velocidade = flappyBird.velocidade + flappyBird.gravidade;
+            flappyBird.y = flappyBird.y + flappyBird.velocidade;
+
+        },
 
 
-const flappyBird = {
-    spriteX : 0,
-    spriteY : 0,
-    largura : 34,
-    altura : 24,
-    x : 34,
-    y : 24,
-    desenha() {
-        contexto.drawImage(
-            sprites,
-                flappyBird.spriteX, flappyBird.spriteY, // Sprite X, Sprite Y
-                flappyBird.largura, flappyBird.altura, // Tamanho do recorte na sprite
-                flappyBird.x, flappyBird.y,
-                flappyBird.largura, flappyBird.altura // Tamanho da imagem
-                );
-                
-            }
+        desenha() {
+            contexto.drawImage(
+                sprites,
+                    flappyBird.spriteX, flappyBird.spriteY, // Sprite X, Sprite Y
+                    flappyBird.largura, flappyBird.altura, // Tamanho do recorte na sprite
+                    flappyBird.x, flappyBird.y,
+                    flappyBird.largura, flappyBird.altura // Tamanho da imagem
+                    );
+                    
+                }
             
             
         }
-        
+          
         const chao = {
             spriteX : 0,
             spriteY : 610,
@@ -86,20 +93,43 @@ const flappyBird = {
             }
         }
 
+        const mensagemGetReady = {
+            spriteX : 134,
+            spriteY : 0,
+            largura : 174,
+            altura : 152,
+            x : (canvas.width / 2) - 174 / 2,
+            y : 50,
+            desenha() {
+                contexto.drawImage(
+                    sprites,
+                    mensagemGetReady.spriteX, mensagemGetReady.spriteY,
+                    mensagemGetReady.largura, mensagemGetReady.altura,
+                    mensagemGetReady.x , mensagemGetReady.y,
+                    mensagemGetReady.largura, mensagemGetReady.altura
+                );
+        
+            }
+        }
 
 
-
-
+        console.log(mensagemGetReady);
 
 
         function loop(){
+            flappyBird.atualiza();
+            
             planoDeFundo.desenha();
             chao.desenha();
             flappyBird.desenha();
-
+            
+            mensagemGetReady.desenha();
     
-    
-    requestAnimationFrame(loop);
+            
+            
+            
+            
+            requestAnimationFrame(loop);
 }
 
 
