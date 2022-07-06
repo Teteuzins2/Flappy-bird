@@ -45,8 +45,12 @@ const contexto = canvas.getContext('2d');
                     console.log("dei de boca no chão ;-;")
                     som_Hit.play();
                     
-                    mudaParaTela(Telas.INICIO)
+                    setTimeout(() => {
+                        mudaParaTela(Telas.INICIO)
+
+                    }, 500); 
                     
+                   
                     return;
     
                 }
