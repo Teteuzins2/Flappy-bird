@@ -55,8 +55,8 @@ const contexto = canvas.getContext('2d');
     
                 }
     
-                flappyBird.velocidade = flappyBird.velocidade + flappyBird.gravidade;
-                flappyBird.y = flappyBird.y + flappyBird.velocidade;
+                flappyBird.velocidade += flappyBird.gravidade;
+                flappyBird.y += flappyBird.velocidade;
     
             },
     
