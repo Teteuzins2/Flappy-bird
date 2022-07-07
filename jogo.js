@@ -1,4 +1,4 @@
-console.log('[DevSoutinho] Flappy Bird');
+console.log('Flappy Bird');
 
 const som_Hit = new Audio();
 som_Hit.src = './efeitos/efeitos_hit.wav';
