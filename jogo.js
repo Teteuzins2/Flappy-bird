@@ -31,9 +31,9 @@ const contexto = canvas.getContext('2d');
             altura : 24,
             x : 34,
             y : 24,
-            gravidade : 0.25,
+            gravidade : 6,
             velocidade : 0,
-            pulo : 4.6,
+            pulo : 10,
             pula(){
                 console.log("to pulando!!!");
                 console.log('[antes]', flappyBird.velocidade);
